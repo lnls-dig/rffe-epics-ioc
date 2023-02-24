@@ -1,0 +1,8 @@
+# Ignore build artifacts
+
+bin/
+lib/
+db/
+dbd/
+O.*
+envPaths
