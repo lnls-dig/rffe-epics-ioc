@@ -13,6 +13,17 @@ inAtt {
     in "%f";
 }
 
+# Temperature Measurement
+inMeasTempAC {
+    out "MEASure:TEMPerature:AC?";
+    in "%f";
+}
+
+inMeasTempBD {
+    out "MEASure:TEMPerature:BD?";
+    in "%f";
+}
+
 # Operation
 Rst {
     out "SYSTem:RESet";
