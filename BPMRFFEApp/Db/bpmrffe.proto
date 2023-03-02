@@ -1,0 +1,137 @@
+# Communication protocol definition
+
+OutTerminator = CR LF;
+InTerminator = CR LF;
+
+# Attenuation
+outAtt {
+    out "SET:ATTEnuation %f";
+}
+
+inAtt {
+    out "GET:ATTEnuation?";
+    in "%f";
+}
+
+# Temperature Measurement
+inMeasTempAC {
+    out "MEASure:TEMPerature:AC?";
+    in "%f";
+}
+
+inMeasTempBD {
+    out "MEASure:TEMPerature:BD?";
+    in "%f";
+}
+
+# Heating control operations
+outTempCtl {
+    out "SET:TEMPControl:AUTOmatic %{0|1}";
+}
+
+inTempCtl {
+    out "GET:TEMPControl:AUTOmatic?";
+    in "%{0|1}";
+}
+
+# Manual heating setting operations
+outHeaterVoltAC {
+    out "SET:DAC:OUTput:AC %f";
+}
+
+inHeaterVoltAC {
+    out "GET:DAC:OUTput:AC?";
+    in "%f";
+}
+
+outHeaterVoltBD {
+    out "SET:DAC:OUTput:BD %f";
+}
+
+inHeaterVoltBD {
+    out "GET:DAC:OUTput:BD?";
+    in "%f";
+}
+
+# PID parameter setting operations
+outPIDTempSpAC {
+    out "SET:TEMPerature:SETPoint:AC %f";
+}
+
+inPIDTempSpAC {
+    out "GET:TEMPerature:SETPoint:AC?";
+    in "%f";
+}
+
+outPIDTempSpBD {
+    out "SET:TEMPerature:SETPoint:BD %f";
+}
+
+inPIDTempSpBD {
+    out "GET:TEMPerature:SETPoint:BD?";
+    in "%f";
+}
+
+outPIDKpAC {
+    out "SET:PID:Kc:AC %f";
+}
+
+inPIDKpAC {
+    out "GET:PID:Kc:AC?";
+    in "%f";
+}
+
+outPIDKpBD {
+    out "SET:PID:Kc:BD %f";
+}
+
+inPIDKpBD {
+    out "GET:PID:Kc:BD?";
+    in "%f";
+}
+
+outPIDTiAC {
+    out "SET:PID:Ti:AC %f";
+}
+
+inPIDTiAC {
+    out "GET:PID:Ti:AC?";
+    in "%f";
+}
+
+outPIDTiBD {
+    out "SET:PID:Ti:BD %f";
+}
+
+inPIDTiBD {
+    out "GET:PID:Ti:BD?";
+    in "%f";
+}
+
+outPIDTdAC {
+    out "SET:PID:Td:AC %f";
+}
+
+inPIDTdAC {
+    out "GET:PID:Td:AC?";
+    in "%f";
+}
+
+outPIDTdBD {
+    out "SET:PID:Td:BD %f";
+}
+
+inPIDTdBD {
+    out "GET:PID:Td:BD?";
+    in "%f";
+}
+
+# Operations
+getVersion {
+    out "GET:VERsion?";
+    in "%140c";
+}
+
+Rst {
+    out "SYSTem:RESet";
+}
